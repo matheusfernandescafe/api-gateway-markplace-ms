@@ -1,7 +1,8 @@
-import { AuthGuard } from './auth.guard.js';
+import { Reflector } from '@nestjs/core';
+import { RoleGuard } from './role.guard.js';
 
-describe('AuthGuard', () => {
+describe('RoleGuard', () => {
   it('should be defined', () => {
-    expect(new AuthGuard()).toBeDefined();
+    expect(new RoleGuard(new Reflector())).toBeDefined(); // <-- Resolvido
   });
 });
