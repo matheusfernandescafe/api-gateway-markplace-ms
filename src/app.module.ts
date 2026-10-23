@@ -17,6 +17,7 @@ import { CustomThrottlerGuard } from './guards/throttler.guard.js';
     }),
     ThrottlerModule.forRootAsync({
       imports: [ConfigModule],
+      inject: [ConfigService],
       useFactory: (configService: ConfigService) => [
         {
           name: 'short',
